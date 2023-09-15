@@ -1,0 +1,22 @@
+dataset: ml-1m
+model: BPR
+data_path: dataset/
+benchmark_filename: [train, val, test]
+train_batch_size: 1024
+epochs: 1000
+stopping_step: 10
+eval_args:
+  group_by: none
+  mode: full
+load_col:
+  inter:
+    - user_id
+    - item_id
+    - rating
+metrics:
+  - Recall
+  - NDCG
+repeatable: true
+seed: 42
+topk: 10
+valid_metric: Recall@10

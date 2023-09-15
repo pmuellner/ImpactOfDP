@@ -1,0 +1,295 @@
+dropout_prob:0.5, learning_rate:0.01, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.1389    ndcg@10 : 0.1267
+Test result:
+recall@10 : 0.1205    ndcg@10 : 0.1134
+
+dropout_prob:0.25, learning_rate:0.01, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.1241    ndcg@10 : 0.1238
+Test result:
+recall@10 : 0.1191    ndcg@10 : 0.1209
+
+dropout_prob:0.5, learning_rate:0.001, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.1342    ndcg@10 : 0.1329
+Test result:
+recall@10 : 0.1205    ndcg@10 : 0.1216
+
+dropout_prob:0.0, learning_rate:0.001, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.1267    ndcg@10 : 0.1308
+Test result:
+recall@10 : 0.1135    ndcg@10 : 0.119
+
+dropout_prob:0.0, learning_rate:0.0001, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.0812    ndcg@10 : 0.0973
+Test result:
+recall@10 : 0.0721    ndcg@10 : 0.0877
+
+dropout_prob:0.25, learning_rate:0.001, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.1279    ndcg@10 : 0.1315
+Test result:
+recall@10 : 0.1156    ndcg@10 : 0.1204
+
+dropout_prob:0.1, learning_rate:0.0001, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.0815    ndcg@10 : 0.0979
+Test result:
+recall@10 : 0.0713    ndcg@10 : 0.0874
+
+dropout_prob:0.5, learning_rate:0.001, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.1344    ndcg@10 : 0.1311
+Test result:
+recall@10 : 0.1253    ndcg@10 : 0.1248
+
+dropout_prob:0.25, learning_rate:0.0001, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.0797    ndcg@10 : 0.0897
+Test result:
+recall@10 : 0.07    ndcg@10 : 0.0824
+
+dropout_prob:0.1, learning_rate:0.0001, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.0426    ndcg@10 : 0.0523
+Test result:
+recall@10 : 0.038    ndcg@10 : 0.0479
+
+dropout_prob:0.5, learning_rate:0.0001, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.0794    ndcg@10 : 0.097
+Test result:
+recall@10 : 0.0705    ndcg@10 : 0.0874
+
+dropout_prob:0.5, learning_rate:0.01, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.1311    ndcg@10 : 0.1301
+Test result:
+recall@10 : 0.1146    ndcg@10 : 0.1146
+
+dropout_prob:0.1, learning_rate:0.01, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.1256    ndcg@10 : 0.1246
+Test result:
+recall@10 : 0.1098    ndcg@10 : 0.1105
+
+dropout_prob:0.1, learning_rate:0.001, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.1331    ndcg@10 : 0.1303
+Test result:
+recall@10 : 0.1244    ndcg@10 : 0.1239
+
+dropout_prob:0.5, learning_rate:0.0001, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.0349    ndcg@10 : 0.0471
+Test result:
+recall@10 : 0.0336    ndcg@10 : 0.0464
+
+dropout_prob:0.25, learning_rate:0.001, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.1379    ndcg@10 : 0.1315
+Test result:
+recall@10 : 0.119    ndcg@10 : 0.1175
+
+dropout_prob:0.5, learning_rate:0.0001, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.0806    ndcg@10 : 0.0889
+Test result:
+recall@10 : 0.0702    ndcg@10 : 0.0818
+
+dropout_prob:0.25, learning_rate:0.0001, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.0346    ndcg@10 : 0.0454
+Test result:
+recall@10 : 0.0337    ndcg@10 : 0.0456
+
+dropout_prob:0.0, learning_rate:0.001, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.1184    ndcg@10 : 0.1218
+Test result:
+recall@10 : 0.1002    ndcg@10 : 0.1094
+
+dropout_prob:0.5, learning_rate:0.0001, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.0438    ndcg@10 : 0.0533
+Test result:
+recall@10 : 0.0389    ndcg@10 : 0.0486
+
+dropout_prob:0.25, learning_rate:0.01, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.1253    ndcg@10 : 0.1184
+Test result:
+recall@10 : 0.1133    ndcg@10 : 0.1104
+
+dropout_prob:0.1, learning_rate:0.0001, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.0362    ndcg@10 : 0.0419
+Test result:
+recall@10 : 0.0357    ndcg@10 : 0.0432
+
+dropout_prob:0.1, learning_rate:0.01, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.1299    ndcg@10 : 0.1268
+Test result:
+recall@10 : 0.1172    ndcg@10 : 0.1173
+
+dropout_prob:0.0, learning_rate:0.01, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.1274    ndcg@10 : 0.1223
+Test result:
+recall@10 : 0.1184    ndcg@10 : 0.1121
+
+dropout_prob:0.5, learning_rate:0.01, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.131    ndcg@10 : 0.1252
+Test result:
+recall@10 : 0.1139    ndcg@10 : 0.1148
+
+dropout_prob:0.0, learning_rate:0.0001, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.0421    ndcg@10 : 0.0521
+Test result:
+recall@10 : 0.038    ndcg@10 : 0.0475
+
+dropout_prob:0.0, learning_rate:0.0001, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.0342    ndcg@10 : 0.0447
+Test result:
+recall@10 : 0.0333    ndcg@10 : 0.045
+
+dropout_prob:0.25, learning_rate:0.001, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.1337    ndcg@10 : 0.1319
+Test result:
+recall@10 : 0.1209    ndcg@10 : 0.1196
+
+dropout_prob:0.0, learning_rate:0.01, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.1261    ndcg@10 : 0.1251
+Test result:
+recall@10 : 0.1222    ndcg@10 : 0.1165
+
+dropout_prob:0.25, learning_rate:0.01, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.1271    ndcg@10 : 0.1246
+Test result:
+recall@10 : 0.1115    ndcg@10 : 0.113
+
+dropout_prob:0.0, learning_rate:0.001, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.1368    ndcg@10 : 0.1285
+Test result:
+recall@10 : 0.1203    ndcg@10 : 0.1152
+
+dropout_prob:0.0, learning_rate:0.01, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.1245    ndcg@10 : 0.1185
+Test result:
+recall@10 : 0.113    ndcg@10 : 0.1064
+
+dropout_prob:0.25, learning_rate:0.0001, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.043    ndcg@10 : 0.0525
+Test result:
+recall@10 : 0.0379    ndcg@10 : 0.0476
+
+dropout_prob:0.25, learning_rate:0.001, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.1327    ndcg@10 : 0.131
+Test result:
+recall@10 : 0.1243    ndcg@10 : 0.1244
+
+dropout_prob:0.25, learning_rate:0.0001, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.0817    ndcg@10 : 0.0978
+Test result:
+recall@10 : 0.071    ndcg@10 : 0.0872
+
+dropout_prob:0.5, learning_rate:0.001, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.1316    ndcg@10 : 0.1331
+Test result:
+recall@10 : 0.1161    ndcg@10 : 0.1212
+
+dropout_prob:0.0, learning_rate:0.001, mlp_hidden_size:[800]
+Valid result:
+recall@10 : 0.1341    ndcg@10 : 0.1325
+Test result:
+recall@10 : 0.1256    ndcg@10 : 0.1258
+
+dropout_prob:0.1, learning_rate:0.001, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.1282    ndcg@10 : 0.1323
+Test result:
+recall@10 : 0.1132    ndcg@10 : 0.1196
+
+dropout_prob:0.1, learning_rate:0.0001, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.0343    ndcg@10 : 0.0449
+Test result:
+recall@10 : 0.034    ndcg@10 : 0.0454
+
+dropout_prob:0.1, learning_rate:0.001, mlp_hidden_size:[400]
+Valid result:
+recall@10 : 0.116    ndcg@10 : 0.1212
+Test result:
+recall@10 : 0.1009    ndcg@10 : 0.1108
+
+dropout_prob:0.1, learning_rate:0.01, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.1241    ndcg@10 : 0.1249
+Test result:
+recall@10 : 0.119    ndcg@10 : 0.1175
+
+dropout_prob:0.1, learning_rate:0.01, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.1283    ndcg@10 : 0.122
+Test result:
+recall@10 : 0.1136    ndcg@10 : 0.1079
+
+dropout_prob:0.5, learning_rate:0.001, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.136    ndcg@10 : 0.1335
+Test result:
+recall@10 : 0.1251    ndcg@10 : 0.1242
+
+dropout_prob:0.5, learning_rate:0.01, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.1261    ndcg@10 : 0.1277
+Test result:
+recall@10 : 0.1126    ndcg@10 : 0.1113
+
+dropout_prob:0.25, learning_rate:0.01, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.1318    ndcg@10 : 0.1276
+Test result:
+recall@10 : 0.1274    ndcg@10 : 0.1228
+
+dropout_prob:0.0, learning_rate:0.0001, mlp_hidden_size:[600]
+Valid result:
+recall@10 : 0.0362    ndcg@10 : 0.0425
+Test result:
+recall@10 : 0.0353    ndcg@10 : 0.0428
+
+dropout_prob:0.0, learning_rate:0.01, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.129    ndcg@10 : 0.1212
+Test result:
+recall@10 : 0.1126    ndcg@10 : 0.107
+
+dropout_prob:0.1, learning_rate:0.001, mlp_hidden_size:[200]
+Valid result:
+recall@10 : 0.1377    ndcg@10 : 0.1311
+Test result:
+recall@10 : 0.1208    ndcg@10 : 0.1175
+
+=== Best params ===
+dropout_prob : 0.5    learning_rate : 0.01    mlp_hidden_size : [200]
+Valid results:
+recall@10 : 0.1389    ndcg@10 : 0.1267
+Test results:
+recall@10 : 0.1205    ndcg@10 : 0.1134
+===================
