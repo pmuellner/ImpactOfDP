@@ -10,10 +10,8 @@ import gc
 
 if __name__ == '__main__':
     base_config = {
-        "embedding_size": 64,
-        "learning_rate": 0.0001,
-        "dataset": "ml-1m",
-        "model": "BPR",
+        "dataset": "LFM-3k",
+        "model": "Pop",
 
         "data_path": "dataset/",
         "benchmark_filename": ["train", "val", "test"],
@@ -36,20 +34,29 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpu_id", default="0", required=False, type=str)
+    parser.add_argument("--eps", required=True, type=str)
+    parser.add_argument("--nodp", default="true", type=str)
     args = parser.parse_args()
+    epsilons = [eps for eps in args.eps.split(", ")]
+    if args.nodp == "true":
+        args.nodp = True
+    else:
+        args.nodp = False
 
     base_config["gpu_id"] = args.gpu_id
 
-    for seed in range(5):
-        new_config = base_config.copy()
-        new_config["seed"] = seed
-        new_config["checkpoint_dir"] = "saved/" + new_config["dataset"] + "/" + new_config["model"] + "/nodp/"
-        if not os.path.exists(new_config["checkpoint_dir"]):
-            os.makedirs(new_config["checkpoint_dir"])
-        run_recbole(config_dict=new_config, saved=True)
-        time.sleep(60)
+    if args.nodp:
+        for seed in range(5):
+            new_config = base_config.copy()
+            new_config["seed"] = seed
+            new_config["checkpoint_dir"] = "saved/" + new_config["dataset"] + "/" + new_config["model"] + "/nodp/"
+            if not os.path.exists(new_config["checkpoint_dir"]):
+                os.makedirs(new_config["checkpoint_dir"])
+            run_recbole(config_dict=new_config, saved=True)
+            torch.cuda.empty_cache()
+            gc.collect()
 
-    for eps in [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 3, 4, 5, 10]:
+    for eps in epsilons:
         new_config = base_config.copy()
         new_config["benchmark_filename"] = ["train_e" + str(eps), "val", "test"]
         new_config["checkpoint_dir"] = "saved/" + new_config["dataset"] + "/" + new_config["model"] + "/e" + str(eps) + "/"
@@ -58,18 +65,5 @@ if __name__ == '__main__':
         for seed in range(5):
             new_config["seed"] = seed
             run_recbole(config_dict=new_config, saved=True)
-            time.sleep(60)
-
-        #todo
-        try:
-            ram_info = psutil.virtual_memory()
-            print(f"Total: {ram_info.total / 1024 / 1024 / 1024:.2f} GB")
-            print(f"Available: {ram_info.available / 1024 / 1024 / 1024:.2f} GB")
-            print(f"Used: {ram_info.used / 1024 / 1024 / 1024:.2f} GB")
-            print(f"Percentage usage: {ram_info.percent}%")
-        except FileNotFoundError:
-            print("Ram info not available on this system")
-
-        gc.collect()
-
-
+            torch.cuda.empty_cache()
+            gc.collect()
