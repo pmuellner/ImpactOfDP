@@ -48,19 +48,21 @@ def extract(path):
     #model.history_item_id = model.history_item_id.to(device=torch.device('cpu'))
     #model.history_item_value = model.history_item_value.to(device=torch.device('cpu'))
 
-    batch_size = 1000
+    batch_size = 100
     n_batches = np.ceil(len(uid_series) / batch_size)
     recommendation_lists = dict()
+    idx = 0
     for bid, batch in enumerate(np.array_split(uid_series, n_batches)):
         print("batch %d/%d" % (bid+1, n_batches))
         topk_score, topk_iid_list = full_sort_topk(batch, model, test_data, k=10, device=torch.device('cpu'))
         external_item_list = dataset.id2token(dataset.iid_field, topk_iid_list.cpu())
 
-        for idx, reclist in enumerate(external_item_list):
+        for reclist in external_item_list:
             internal_uid = uid_series[idx]
             external_uid = dataset.id2token(dataset.uid_field, internal_uid)
             recommendation_lists[external_uid] = reclist
-
+            idx += 1
+        print(len(recommendation_lists))
     return recommendation_lists
 
 LEN_SUFFIX = len(".pth")
