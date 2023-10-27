@@ -32,9 +32,9 @@ python data_splits_and_dp.py
 python hyperparameter_tuning.py --dataset ml-1m --model_name MultVAE --params hp/multvae_params --config hp/multvae_config
 ```
 
-4. <i>Model Training</i>:
+4. <i>Model Training</i>: Train a recommendation model on data with or without DP and use different random seeds. For example, to train a model (defined in the .py file) using GPU 1 different $\epsilon$ values and random seeds:
 ```
-TODO
+python train_models.py --gpu_id 1 --eps "0.1, 1, 3, nodp" --seeds "0, 1, 2, 3, 4"
 ```
 
 5. <i>Evaluation</i>:
