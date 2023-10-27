@@ -22,6 +22,11 @@ Following steps need to be followed to reproduce our experiments
 dataset/preprocessing.ipynb
 ```
 
+2. <i>Data Splitting and Applying DP</i>: Split datasets into 60% training data, 20% validation data, and 20% test data, generate multiple training datasets with DP (via using different $\epsilon$ values).
+```
+python data_splits_and_dp.py
+```
+
 ## Data
 For this work, we only use datasets that are publicly available:
 * MovieLens 1M [1] (https://grouplens.org/datasets/movielens/1m/)
