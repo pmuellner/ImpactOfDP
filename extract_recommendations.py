@@ -72,30 +72,25 @@ checkpoint_dir = "saved/" + dataset_name + "/" + model_name + "/"
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--eps", default="1", type=str)
-parser.add_argument("--nodp", default="true", type=str)
 args = parser.parse_args()
 epsilons = [eps for eps in args.eps.split(", ")]
-if args.nodp == "true":
-    args.nodp = True
-else:
-    args.nodp = False
-
-if args.nodp:
-    for saved_model_name in os.listdir(checkpoint_dir + "nodp"):
-        if saved_model_name.endswith(".pkl"):
-            continue
-        recommendations = extract(checkpoint_dir + "nodp/" + saved_model_name)
-        with open(checkpoint_dir + "nodp/" + saved_model_name[:-LEN_SUFFIX] + ".pkl", "wb") as f:
-            pl.dump(recommendations, f)
-        torch.cuda.empty_cache()
-        gc.collect()
 
 for eps in epsilons:
-    for saved_model_name in os.listdir(checkpoint_dir + "e" + str(eps)):
-        if saved_model_name.endswith(".pkl"):
-            continue
-        recommendations = extract(checkpoint_dir + "e" + str(eps) + "/" + saved_model_name)
-        with open(checkpoint_dir + "e" + str(eps) + "/" + saved_model_name[:-LEN_SUFFIX] + ".pkl", "wb") as f:
-            pl.dump(recommendations, f)
-        torch.cuda.empty_cache()
-        gc.collect()
+    if eps == "nodp":
+        for saved_model_name in os.listdir(checkpoint_dir + "nodp"):
+            if saved_model_name.endswith(".pkl"):
+                continue
+            recommendations = extract(checkpoint_dir + "nodp/" + saved_model_name)
+            with open(checkpoint_dir + "nodp/" + saved_model_name[:-LEN_SUFFIX] + ".pkl", "wb") as f:
+                pl.dump(recommendations, f)
+            torch.cuda.empty_cache()
+            gc.collect()
+    else:
+        for saved_model_name in os.listdir(checkpoint_dir + "e" + str(eps)):
+            if saved_model_name.endswith(".pkl"):
+                continue
+            recommendations = extract(checkpoint_dir + "e" + str(eps) + "/" + saved_model_name)
+            with open(checkpoint_dir + "e" + str(eps) + "/" + saved_model_name[:-LEN_SUFFIX] + ".pkl", "wb") as f:
+                pl.dump(recommendations, f)
+            torch.cuda.empty_cache()
+            gc.collect()

@@ -6,11 +6,13 @@ from datetime import datetime as dt
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", default="ml-100k_custom")
-parser.add_argument("--model_name", default="LightGCN")
+parser.add_argument("--model_name")
+parser.add_argument("--params")
+parser.add_argument("--config")
 args = parser.parse_args()
 
-params_file = "hp/" + args.dataset + "/" + args.model_name + "_params.hyper"
-config_file = "hp/" + args.dataset + "/" + args.model_name + "_config.yaml"
+params_file = "hp/" + args.params + ".hyper"
+config_file = "hp/" + args.config + ".yaml"
 output_file = "hp/" + args.dataset + "/" + args.model_name + ".results"
 
 starttime = dt.now()
