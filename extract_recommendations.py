@@ -1,4 +1,4 @@
-from recbole.quick_start import load_data_and_model
+
 from recbole.utils.case_study import full_sort_topk
 import numpy as np
 import pickle as pl
@@ -11,11 +11,9 @@ from logging import getLogger
 from recbole.data import create_dataset, data_preparation
 
 
-def efficient_load_data_and_model(model_file):
+def load_data_and_model_cpu(model_file):
     checkpoint = torch.load(model_file)
     config = checkpoint["config"]
-
-    #config["eval_batch_size"] = 100000
 
     init_seed(config["seed"], config["reproducibility"])
     init_logger(config)
@@ -35,19 +33,20 @@ def efficient_load_data_and_model(model_file):
     return model, dataset, test_data
 
 def extract(path):
-    #_, model, dataset, _, _, test_data = load_data_and_model(model_file=path)
-    model, dataset, test_data = efficient_load_data_and_model(model_file=path)
+    # load all necessary resources to the CPU
+    model, dataset, test_data = load_data_and_model_cpu(model_file=path)
+
 
     uid_series = np.array([uid for token, uid in test_data.dataset.field2token_id[test_data.uid_field].items()
                            if token != "[PAD]"])
-
     model = model.to(device=torch.device('cpu'))
     model.device = torch.device("cpu")
 
-    # MultiVAE
+    # MultVAE requires additional resources to be transferred to the CPU
     #model.history_item_id = model.history_item_id.to(device=torch.device('cpu'))
     #model.history_item_value = model.history_item_value.to(device=torch.device('cpu'))
 
+    # For efficiency, generate recommendation lists for batches of users
     batch_size = 100
     n_batches = np.ceil(len(uid_series) / batch_size)
     recommendation_lists = dict()
@@ -62,15 +61,16 @@ def extract(path):
             external_uid = dataset.id2token(dataset.uid_field, internal_uid)
             recommendation_lists[external_uid] = reclist
             idx += 1
-        print(len(recommendation_lists))
     return recommendation_lists
 
+
 LEN_SUFFIX = len(".pth")
-dataset_name = "sportsandoutdoors"
-model_name = "NeuMF"
+dataset_name = "ml-1m"
+model_name = "ENMF"
 checkpoint_dir = "saved/" + dataset_name + "/" + model_name + "/"
 
 parser = argparse.ArgumentParser()
+# a list containing for which epsilon values the recommendation lists should be extracted, e.g., "0.1, 1, 4"
 parser.add_argument("--eps", default="1", type=str)
 args = parser.parse_args()
 epsilons = [eps for eps in args.eps.split(", ")]
