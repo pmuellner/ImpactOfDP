@@ -37,17 +37,11 @@ python hyperparameter_tuning.py --dataset ml-1m --model_name MultVAE --params hp
 python train_models.py --gpu_id 1 --eps "0.1, 1, 3, nodp" --seeds "0, 1, 2, 3, 4"
 ```
 
-5. <i>Evaluation</i>: Generate recommendation lists based on the trained models and save the recommendation lists to the disk. Then, evaluate the recommendations using the respective notebook:
-<b> Generate Recommendation Lists </b>
+5. <i>Evaluation</i>: Generate recommendation lists based on the trained models and save the recommendation lists to the disk (extract_recommendations.py). Then, evaluate the recommendations using the respective notebook (evaluate_recommendations.ipynb ):
 ```
 python extract_recommendations.py
-```
-
-<b> Evaluate the Recommendations </b>
-```
 evaluate_recommendations.ipynb 
 ```
-
 
 
 ## Data
