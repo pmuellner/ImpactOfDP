@@ -27,21 +27,27 @@ dataset/preprocessing.ipynb
 python data_splits_and_dp.py
 ```
 
-3. <i>Hyperparameter Tuning</i>:
+3. <i>Hyperparameter Tuning</i>: Test various hyperparameter configurations for all models and datasets, identify the best parameters for a given model and dataset. For more details, see https://recbole.io/docs/user_guide/usage/parameter_tuning.html.
+For example, to perform hyperparameter tuning on the MovieLens 1M dataset for MultVAE:
 ```
- TODO
+python hyperparameter_tuning.py --dataset ml-1m --model_name MultVAE --params hp/multvae_params --config hp/multvae_config
 ```
+where hp/multvae_params contains the parameter configurations to be tested, and hp/multvae_config is the configuration file for RecBole.
 
 4. <i>Model Training</i>:
 ```
- TODO
+TODO
 ```
 
 5. <i>Evaluation</i>:
 ```
- TODO 
- evaluate_recommendations.ipynb
+TODO 
 ```
+
+```
+evaluate_recommendations.ipynb 
+```
+
 
 
 ## Data
