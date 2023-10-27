@@ -15,10 +15,11 @@ Collaborative filtering-based recommender systems leverage vast amounts of behav
 
 
 ## Instructions
-1. TODO
-2. 
+Following steps need to be followed to reproduce our experiments
+
+1. Dataset Preprocessing: Scaling listening events to a range of 1 to 5 (LastFM User Groups), apply user-core pruning (all datasets), apply item-core pruning (LastFM User Groups), filter positive feedback data.
 ```
-TODO
+dataset/preprocessing.ipynb
 ```
 
 ## Data
