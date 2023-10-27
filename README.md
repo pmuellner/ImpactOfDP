@@ -27,6 +27,23 @@ dataset/preprocessing.ipynb
 python data_splits_and_dp.py
 ```
 
+3. <i>Hyperparameter Tuning</i>:
+```
+ TODO
+```
+
+4. <i>Model Training</i>:
+```
+ TODO
+```
+
+5. <i>Evaluation</i>:
+```
+ TODO 
+ evaluate_recommendations.ipynb
+```
+
+
 ## Data
 For this work, we only use datasets that are publicly available:
 * MovieLens 1M [1] (https://grouplens.org/datasets/movielens/1m/)
