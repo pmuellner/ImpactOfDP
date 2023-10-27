@@ -22,13 +22,14 @@ TODO
 ```
 
 ## Data
-For this work, we only use datasets that are publicly available, i.e., MovieLens 1M [1], LastFM User Groups [2, 3], and Amazon Grocery and Gourmet Food [4].
+For this work, we only use datasets that are publicly available:
+* MovieLens 1M [1] (https://grouplens.org/datasets/movielens/1m/)
+* LastFM User Groups [2] (https://doi.org/10.5281/zenodo.3475975)
+* Amazon Grocery and Gourmet Food [3] (https://nijianmo.github.io/amazon/index.html).
 
 ## References
 [1] Harper, F. M., Konstan, J. A.: The movielens datasets: History and context. ACM Transactions on Interactive Intelligent Systems (TIIS) 5(4), 1–19 (2015)   
 
 [2] Kowald, D., Schedl, M., Lex, E.: The unfairness of popularity bias in music reommendation: a reproducibility study. Advances in Information Retrieval 12036, 35 (2020)
 
-[3] Kowald, D. (2019). LFM User Groups (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.3475975
-
-[4] Ni, J., Li, J., McAuley, J.: Justifying recommendations using distantly-labeled reviews and fine-grained aspects. In EMNLP-IJCNLP, pp. 188–197 (2019)
+[3] Ni, J., Li, J., McAuley, J.: Justifying recommendations using distantly-labeled reviews and fine-grained aspects. In EMNLP-IJCNLP, pp. 188–197 (2019)
