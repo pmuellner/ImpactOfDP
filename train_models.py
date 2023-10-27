@@ -1,14 +1,11 @@
 from recbole.quick_start import run_recbole
-import numpy as np
 import argparse
 import os
-import glob
 import torch
-import time
-import psutil
 import gc
 
 if __name__ == '__main__':
+    # define the model configuration (see RecBole docs: https://recbole.io/docs/index.html)
     base_config = {
         "dataset": "LFM-3k",
         "model": "LightGCN",
@@ -42,9 +39,13 @@ if __name__ == '__main__':
     }
 
     parser = argparse.ArgumentParser()
+    # the id of the GPU to use
     parser.add_argument("--gpu_id", default="0", required=False, type=str)
+    # a list indicating what epsilon values to use, e.g., "0.1, 1, 5"
     parser.add_argument("--eps", required=True, type=str)
+    # a list indicating what random seeds to use, e.g., "0, 1, 2, 3, 4"
     parser.add_argument("--seeds", default="0", type=str)
+
     args = parser.parse_args()
     epsilons = [eps for eps in args.eps.split(", ")]
     seeds = [seed for seed in args.seeds.split(", ")]
@@ -52,6 +53,7 @@ if __name__ == '__main__':
 
     for eps in epsilons:
         new_config = base_config.copy()
+        # depending on the epsilon value, the according DP training dataset needs to be selected
         if eps == "nodp":
             new_config["checkpoint_dir"] = "saved/" + new_config["dataset"] + "/" + new_config["model"] + "/nodp/"
         else:
@@ -60,8 +62,8 @@ if __name__ == '__main__':
 
         if not os.path.exists(new_config["checkpoint_dir"]):
             os.makedirs(new_config["checkpoint_dir"])
+
         for seed in seeds:
-            print(seed)
             new_config["seed"] = int(seed)
             run_recbole(config_dict=new_config, saved=True)
             torch.cuda.empty_cache()
