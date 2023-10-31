@@ -1,0 +1,21 @@
+gpu_id: 7
+dataset: ml-1m
+model: MultiVAE
+data_path: dataset/
+benchmark_filename: [train, val, test]
+train_batch_size: 4096
+epochs: 5000
+stopping_step: 50
+eval_args:
+  mode: full
+  order:
+  split:
+train_neg_sample_args:
+metrics:
+  - Recall
+repeatable: False
+shuffle: True
+seed: 42
+topk: 10
+valid_metric: Recall@10
+eval_batch_size: 1000000

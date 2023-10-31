@@ -1,0 +1,4 @@
+learning_rate choice [0.01, 0.001, 0.0001]
+dropout_prob choice [0.1, 0.25, 0.5]
+latent_dimension choice [32, 64, 128]
+mlp_hidden_size choice ['[400]', '[600]', '[800]']

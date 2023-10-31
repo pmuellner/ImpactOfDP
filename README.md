@@ -29,7 +29,7 @@ python data_splits_and_dp.py
 
 3. <i>Hyperparameter Tuning</i>: Test various hyperparameter configurations for all models and datasets, identify the best parameters for a given model and dataset. More details are given in the RecBole documentation (https://recbole.io/docs/user_guide/usage/parameter_tuning.html). For example, to perform hyperparameter tuning on the MovieLens 1M dataset for MultVAE (hp/multvae_params contains the parameter configurations to be tested, and hp/multvae_config is the configuration file for RecBole):
 ```
-python hyperparameter_tuning.py --dataset ml-1m --model_name MultVAE --params hp/multvae_params --config hp/multvae_config
+python hyperparameter_tuning.py --dataset ml-1m --model_name MultiVAE --params hp/multivae_params --config hp/multivae_config
 ```
 
 4. <i>Model Training</i>: Train a recommendation model on data with or without DP and use different random seeds. For example, to train a model (defined in the .py file) using GPU 1 different $\epsilon$ values and random seeds:
